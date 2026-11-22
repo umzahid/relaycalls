@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay Reviews — Google review replies for UK trades</title>
+<meta name="description" content="I reply to the Google reviews you haven't answered and keep your profile active for two weeks. £149. You approve every word. Done in 72 hours.">
+<meta name="theme-color" content="#F1ECE0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Relay Reviews — Google review replies for UK trades">
+<meta property="og:description" content="20 review replies, 4 Google posts, a review request kit and a report. £149, done in 72 hours.">
+<!--
+  ============================================================
+  BEFORE DEPLOYING, REPLACE THESE PLACEHOLDERS:
+    aumair525@gmail.com           e.g. aumair525@gmail.com
+    Umair Zahid            e.g. Umair
+    Pakistan  your real business postal address
+    https://umzahid.github.io/relaycalls/privacy.html     e.g. https://umzahid.github.io/relaycalls/privacy.html
+    https://umzahid.github.io/relaycalls/        e.g. https://umzahid.github.io/relaycalls/
+
+  Deploy: copy this file to relay-pages/reviews.html, then:
+    cd relay-pages
+    git add reviews.html
+    git commit -m "Add reviews landing page"
+    git push
+  ============================================================
+-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='12' fill='%2338372A'/%3E%3Crect x='8' y='26' width='28' height='7' rx='3.5' fill='%23D6EC63' opacity='.5'/%3E%3Crect x='8' y='17' width='20' height='7' rx='3.5' fill='%23D6EC63' opacity='.78'/%3E%3Crect x='8' y='8' width='12' height='7' rx='3.5' fill='%23D6EC63'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bone:#F1ECE0;--bone-2:#EAE3D3;--paper:#FBF8F0;--ink:#38372A;
+  --ink-soft:#5C5A46;--ink-mute:#78765F;--olive:#7A853B;--lime:#D6EC63;
+  --coral:#F6631F;--sky:#8FB8DC;--line:rgba(56,55,42,.13);--line-soft:rgba(56,55,42,.08);
+  --sans:"Inter","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  --display:"Inter Tight","Inter","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,monospace;
+  --r:28px;--wrap:1120px;--shadow:0 40px 90px -50px rgba(56,50,30,.55);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:96px;overflow-x:clip}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{width:min(var(--wrap),100% - 40px);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--bone);padding:12px 18px;border-radius:0 0 12px 0;z-index:200}
+.skip:focus{left:0}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.04em;line-height:1.02;text-wrap:balance}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--olive);margin-bottom:22px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.6}
+.lede{color:var(--ink-soft);font-size:18px;line-height:1.62;max-width:52ch}
+.fine{font-size:12.5px;color:var(--ink-mute);margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:999px;border:1px solid transparent;font-size:14.5px;font-weight:600;letter-spacing:-.01em;cursor:pointer;transition:transform .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-lime{background:var(--lime);color:#2A2A1C;box-shadow:0 14px 30px -16px rgba(140,160,40,.9)}
+.btn-lime:hover{background:#E4F584}
+.btn-ink{background:var(--ink);color:var(--bone)}
+.btn-ink:hover{background:#2A2921}
+.btn-outline{border-color:rgba(56,55,42,.22);background:transparent}
+.btn-outline:hover{background:rgba(56,55,42,.05);border-color:rgba(56,55,42,.4)}
+.btn svg{width:15px;height:15px}
+:where(a,button):focus-visible{outline:2px solid var(--olive);outline-offset:3px;border-radius:12px}
+
+/* nav */
+.nav-shell{position:sticky;top:0;z-index:80;padding:14px 0 0}
+.nav{display:flex;align-items:center;gap:20px;height:64px;padding:0 12px 0 14px;border-radius:18px;border:1px solid rgba(255,255,255,.6);background:rgba(251,248,240,.72);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 14px 40px -32px rgba(56,50,30,.8)}
+.brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.045em}
+.brand svg{width:27px;height:27px;flex:0 0 auto}
+.tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--olive);border:1px solid rgba(122,133,59,.35);border-radius:999px;padding:3px 8px;margin-left:2px}
+.nav-links{display:flex;align-items:center;gap:24px;margin-left:18px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink-soft);padding:4px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--ink);border-color:var(--olive)}
+.nav-actions{margin-left:auto;display:flex;gap:8px}
+.nav-actions .btn{padding:10px 16px;font-size:13px}
+
+/* hero */
+.hero{position:relative;overflow:clip;isolation:isolate;padding:64px 0 88px;margin-top:-78px;padding-top:150px}
+.hero .field{position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(55% 70% at 12% 4%,rgba(231,242,168,.95) 0%,rgba(231,242,168,0) 62%),
+  radial-gradient(48% 58% at 96% 8%,rgba(248,214,182,.9) 0%,rgba(248,214,182,0) 64%),
+  radial-gradient(45% 55% at 62% 100%,rgba(220,232,244,.95) 0%,rgba(220,232,244,0) 70%),
+  var(--bone)}
+.hero .field::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(241,236,224,0) 55%,var(--bone) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,5.2vw,62px);letter-spacing:-.05em;line-height:.98}
+.hero .lede{margin-top:22px}
+.hero .lede strong{color:var(--ink);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-visual{position:relative;padding:10px 6px}
+
+/* review card */
+.review-card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:26px 26px 20px;box-shadow:var(--shadow);transform:rotate(-1.2deg)}
+.g-head{display:flex;align-items:center;gap:12px}
+.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(145deg,#DCE8F4,#A8C6E4);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:15px;color:#2F4054}
+.g-head strong{display:block;font-size:14px;letter-spacing:-.01em}
+.stars{display:block;color:#E0A526;font-size:12px;letter-spacing:2px;line-height:1.3}
+.ago{margin-left:auto;font-family:var(--mono);font-size:10px;color:var(--ink-mute)}
+.review-text{margin-top:16px;font-size:15.5px;line-height:1.55;color:var(--ink)}
+.no-reply{display:flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#A34A22}
+.no-reply .dot{width:7px;height:7px;border-radius:50%;background:var(--coral);box-shadow:0 0 0 4px rgba(246,99,31,.13)}
+.reply{margin-top:18px;padding:16px 16px 14px;background:#F4F8E3;border:1px solid rgba(122,133,59,.2);border-radius:18px}
+.reply-label{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--olive);margin-bottom:8px}
+.reply-label::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--olive)}
+.reply p{font-size:14px;line-height:1.55;color:#43452F}
+.example{margin-top:14px;font-size:10.5px;color:var(--ink-mute);font-family:var(--mono);letter-spacing:.02em}
+.badge{position:absolute;background:var(--ink);color:var(--bone);border-radius:999px;padding:9px 15px;font-size:11.5px;font-weight:600;letter-spacing:-.01em;box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+.badge-a{top:-14px;right:8px;transform:rotate(2deg)}
+.badge-b{bottom:-12px;left:-6px;background:var(--lime);color:#2A2A1C;transform:rotate(-2deg)}
+.hero-note{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:46px;padding-top:22px;border-top:1px solid var(--line-soft)}
+.hero-note span{font-size:12.5px;color:var(--ink-mute);display:inline-flex;align-items:center;gap:7px}
+.hero-note svg{width:14px;height:14px;color:var(--olive)}
+
+/* sections */
+section{padding:84px 0}
+.section-head{max-width:720px;margin-bottom:42px}
+.section-head h2{font-size:clamp(30px,4vw,46px);margin-top:0}
+.section-head p{margin-top:16px;color:var(--ink-soft);max-width:58ch}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.card .num{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--olive);text-transform:uppercase}
+.card h3{font-size:20px;margin:26px 0 9px;letter-spacing:-.03em}
+.card p{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+
+/* what you get */
+.get{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.get-item{display:flex;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px}
+.get-icon{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--bone-2);display:grid;place-items:center;color:var(--olive)}
+.get-icon svg{width:19px;height:19px}
+.get-item h3{font-size:16.5px;letter-spacing:-.025em;margin:1px 0 5px}
+.get-item p{font-size:13.8px;color:var(--ink-soft);line-height:1.55}
+
+/* sample */
+.sample{background:var(--ink);color:var(--bone);border-radius:36px;padding:clamp(26px,4vw,54px);position:relative;overflow:clip}
+.sample::before{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-220px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,236,99,.22),transparent);pointer-events:none}
+.sample .eyebrow{color:var(--lime)}
+.sample h2{color:var(--bone);font-size:clamp(28px,3.6vw,42px)}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px;position:relative}
+.pane{background:rgba(251,248,240,.055);border:1px solid rgba(255,255,255,.12);border-radius:22px;padding:24px}
+.pane-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(241,236,224,.55);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.pane-label .dot{width:6px;height:6px;border-radius:50%;background:var(--coral)}
+.pane.after .pane-label .dot{background:var(--lime)}
+.pane blockquote{margin:0;font-size:15px;line-height:1.6;color:rgba(241,236,224,.9)}
+.pane .meta{margin-top:14px;font-family:var(--mono);font-size:10px;color:rgba(241,236,224,.45)}
+.pane .answer{margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:14.5px;line-height:1.6;color:#EDF3CE}
+.sample .note{margin-top:22px;font-family:var(--mono);font-size:10px;color:rgba(241,236,224,.45)}
+
+/* price */
+.price-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+.price-card{background:var(--paper);border:1px solid var(--line);border-radius:34px;padding:clamp(28px,3.6vw,44px);box-shadow:var(--shadow);position:relative;overflow:clip}
+.price-card::before{content:"";position:absolute;right:-120px;top:-120px;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,236,99,.5),transparent)}
+.price-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;position:relative}
+.price-top .eyebrow{margin-bottom:0}
+.price{font-family:var(--display);font-size:clamp(52px,7vw,76px);font-weight:600;letter-spacing:-.06em;line-height:1;margin-top:18px}
+.price small{font-size:15px;font-weight:500;letter-spacing:-.01em;color:var(--ink-mute);margin-left:8px}
+.price-sub{margin-top:8px;font-size:13px;color:var(--ink-mute)}
+.price-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:11px}
+.price-list li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+.price-list svg{flex:0 0 auto;width:16px;height:16px;margin-top:3px;color:var(--olive)}
+.price-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.steps{background:var(--bone-2);border:1px solid var(--line-soft);border-radius:34px;padding:clamp(26px,3.4vw,40px)}
+.steps h3{font-size:21px;margin-bottom:22px}
+.step{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line-soft)}
+.step:last-of-type{border-bottom:0;padding-bottom:0}
+.step-n{flex:0 0 auto;width:26px;height:26px;border-radius:50%;background:var(--ink);color:var(--bone);display:grid;place-items:center;font-family:var(--mono);font-size:10.5px}
+.step h4{margin:2px 0 3px;font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+.step p{font-size:13.3px;color:var(--ink-soft);line-height:1.5}
+.guarantee{margin-top:26px;padding:16px 18px;border-radius:16px;background:rgba(214,236,99,.35);border:1px solid rgba(122,133,59,.25);font-size:13px;line-height:1.55;color:#43452F}
+
+/* faq */
+.faq{max-width:820px;margin-inline:auto}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.025em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:20px;color:var(--olive);line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft);line-height:1.65;max-width:66ch}
+
+/* footer */
+footer{padding:56px 0 40px;border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;justify-content:space-between}
+.foot .brand{font-size:17px}
+.foot p{font-size:12.5px;color:var(--ink-mute);line-height:1.7}
+.foot a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(56,55,42,.25)}
+.foot a:hover{text-decoration-color:var(--olive)}
+.foot-right{text-align:right}
+.foot-legal{margin-top:34px;padding-top:20px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.foot-legal span{font-size:11.5px;color:var(--ink-mute)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero{padding-top:140px}
+  .review-card{transform:none}
+  .price-grid{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .sample-grid{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .nav{height:60px}
+  .nav-actions .btn{padding:9px 13px;font-size:12px}
+  .tag{display:none}
+  .get{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .hero{padding-top:126px}
+  .foot-right{text-align:left}
+  .badge-b{left:0}
+}
+@media (max-width:520px){
+  .hero-note{gap:8px 16px}
+  .cta-row .btn{width:100%}
+  .price-top{flex-direction:column}
+  .badge{font-size:10.5px;padding:8px 12px}
+  .badge-a{right:0}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav-shell">
+  <nav class="nav wrap" aria-label="Main">
+    <a class="brand" href="https://umzahid.github.io/relaycalls/">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="12" fill="#38372A"/><rect x="8" y="26" width="28" height="7" rx="3.5" fill="#D6EC63" opacity=".5"/><rect x="8" y="17" width="20" height="7" rx="3.5" fill="#D6EC63" opacity=".78"/><rect x="8" y="8" width="12" height="7" rx="3.5" fill="#D6EC63"/></svg>
+      <span>Relay</span>
+      <span class="tag">Reviews</span>
+    </a>
+    <div class="nav-links">
+      <a href="#what">What you get</a>
+      <a href="#sample">Sample</a>
+      <a href="#price">Price</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-lime" href="mailto:aumair525@gmail.com?subject=Three%20sample%20replies&amp;body=Hi%20Umair%2C%0D%0A%0D%0AHere%20is%20my%20Google%20profile%3A%20%0D%0A%0D%0ACan%20you%20send%20three%20sample%20replies%3F%0D%0A%0D%0AThanks">Get 3 free replies</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="field" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">For UK plumbers, electricians and roofers</p>
+        <h1 id="hero-title">Your Google profile is the first thing a customer checks.</h1>
+        <p class="lede">I reply to the reviews you haven't answered and keep your profile active for two weeks. <strong>£149.</strong> You approve every word. Done in 72 hours.</p>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="mailto:aumair525@gmail.com?subject=Three%20sample%20replies&amp;body=Hi%20Umair%2C%0D%0A%0D%0AHere%20is%20my%20Google%20profile%3A%20%0D%0A%0D%0ACan%20you%20send%20three%20sample%20replies%3F%0D%0A%0D%0AThanks">Get 3 free sample replies
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-outline" href="#what">What you get</a>
+        </div>
+        <p class="fine">No fake reviews. No incentives. No ranking promises.</p>
+        <div class="hero-note">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>You approve every reply</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>72-hour turnaround</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/></svg>No password needed</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="review-card">
+          <div class="g-head">
+            <span class="avatar" aria-hidden="true">S</span>
+            <div>
+              <strong>Sarah M.</strong>
+              <span class="stars" aria-label="5 out of 5 stars">★★★★★</span>
+            </div>
+            <span class="ago">3 weeks ago</span>
+          </div>
+          <p class="review-text">"Dave came out the same day when our boiler packed in. Had hot water by 4pm. Would use again."</p>
+          <p class="no-reply"><span class="dot" aria-hidden="true"></span>No reply from the owner</p>
+          <div class="reply">
+            <span class="reply-label">Draft reply</span>
+            <p>"Thanks, Sarah — glad Dave got you back up the same afternoon. If anything plays up before winter, give us a ring on the usual number."</p>
+          </div>
+          <p class="example">Example only — not a real customer.</p>
+        </div>
+        <span class="badge badge-a">£149 · 72 hours</span>
+        <span class="badge badge-b">You approve every word</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="cost-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The quiet problem</p>
+        <h2 id="cost-title">An unanswered review is a quiet no.</h2>
+        <p>Most trade businesses are not losing jobs because of their work. They are losing them in the ten seconds a customer spends deciding whether to call.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>It reads as indifference.</h3>
+          <p>A customer sees a complaint and no response. They do not know whether it was fixed. They assume it wasn't.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>Your competitor looks more alive.</h3>
+          <p>The next plumber on the list replied within a day. That is the whole comparison the customer makes.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>The profile stops working.</h3>
+          <p>No replies, no posts, no new photos. Google has less to work with, and so does the customer.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="what" aria-labelledby="what-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The sprint</p>
+        <h2 id="what-title">What the £149 gets you.</h2>
+        <p>One fixed scope, one fixed price, one deadline. No retainer talk until the work is done.</p>
+      </div>
+      <div class="get">
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></svg></span>
+          <div>
+            <h3>Up to 20 review replies</h3>
+            <p>Written in your voice, specific to each review. Positive and negative. You approve every word before it is posted.</p>
+          </div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 2v4M16 2v4M3 10h18M8 15h4"/></svg></span>
+          <div>
+            <h3>4 Google posts</h3>
+            <p>Two weeks of updates: services, areas you cover, seasonal reminders, a real offer if you have one.</p>
+          </div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v14M7 12l5 5 5-5"/><rect x="3" y="19" width="18" height="2" rx="1"/></svg></span>
+          <div>
+            <h3>A review request kit</h3>
+            <p>A direct review link, a QR code, an SMS template and an email template. Ask every customer, not just the happy ones.</p>
+          </div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></span>
+          <div>
+            <h3>A one-page report</h3>
+            <p>What was posted, the before and after, and what to do next. No dashboard you will never log into.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sample" aria-labelledby="sample-title">
+    <div class="wrap">
+      <div class="sample">
+        <p class="eyebrow">Before and after</p>
+        <h2 id="sample-title">The same review. Two different businesses.</h2>
+        <div class="sample-grid">
+          <div class="pane before">
+            <p class="pane-label"><span class="dot" aria-hidden="true"></span>Before</p>
+            <blockquote>"Boiler installation was fine but nobody told us when the engineer was coming. Sat in all morning."</blockquote>
+            <p class="meta">★★☆☆☆ · 2 weeks ago</p>
+            <p class="answer" style="color:rgba(241,236,224,.5);border-top-color:rgba(255,255,255,.08)">No reply.</p>
+          </div>
+          <div class="pane after">
+            <p class="pane-label"><span class="dot" aria-hidden="true"></span>After</p>
+            <blockquote>"Boiler installation was fine but nobody told us when the engineer was coming. Sat in all morning."</blockquote>
+            <p class="meta">★★☆☆☆ · 2 weeks ago</p>
+            <p class="answer">"That's a fair complaint — you shouldn't have been left waiting without a call. We've changed how we send the arrival window now. If you're open to it, ring us on the usual number and ask for Mark; I'd like to make the next visit easier."</p>
+          </div>
+        </div>
+        <p class="note">Example only. Not a real review or customer. Your replies are written from your actual reviews, in your voice.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="price" aria-labelledby="price-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Price</p>
+        <h2 id="price-title">£149. One sprint. Done in 72 hours.</h2>
+        <p>Launch price for the first three clients. Standard price is £249. The retainer is optional and only offered after delivery.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <div class="price-top">
+            <p class="eyebrow">Relay Reviews sprint</p>
+          </div>
+          <p class="price">£149<small>one-time</small></p>
+          <p class="price-sub">Launch price · standard £249</p>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Up to 20 Google review replies</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>4 Google Business Profile posts</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Review request kit with QR code</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One-page before/after report</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>You approve every word</li>
+          </ul>
+          <div class="price-cta">
+            <a class="btn btn-ink" href="mailto:aumair525@gmail.com?subject=The%20%C2%A3149%20sprint&amp;body=Hi%20Umair%2C%0D%0A%0D%0AI%27d%20like%20to%20start%20the%20%C2%A3149%20Google%20profile%20sprint.%20Here%20is%20my%20profile%3A%20%0D%0A%0D%0AThanks">Start the sprint
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-outline" href="mailto:aumair525@gmail.com?subject=Three%20sample%20replies">Get 3 free replies first</a>
+          </div>
+          <p class="fine">Payment by Wise or Payoneer. Full refund if not delivered within five working days of access and approval.</p>
+        </div>
+
+        <div class="steps">
+          <h3>What happens after you say yes</h3>
+          <div class="step">
+            <span class="step-n">1</span>
+            <div><h4>You invite me as a Manager</h4><p>Through Google Business Profile settings. No password, no shared login. You can remove me at any time.</p></div>
+          </div>
+          <div class="step">
+            <span class="step-n">2</span>
+            <div><h4>I draft everything</h4><p>Replies to your real reviews and four posts. You get one document, not a login to a tool you have to learn.</p></div>
+          </div>
+          <div class="step">
+            <span class="step-n">3</span>
+            <div><h4>You approve or edit</h4><p>Reply "approved" or edit inline. Nothing goes live until you confirm.</p></div>
+          </div>
+          <div class="step">
+            <span class="step-n">4</span>
+            <div><h4>I post and send the report</h4><p>Within 72 hours of approval. Then the kit and the report land in your inbox.</p></div>
+          </div>
+          <p class="guarantee"><strong>The guarantee:</strong> I guarantee the work and the deadline. I do not guarantee rankings, stars, calls or revenue — nobody honest can.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head" style="max-width:820px;margin-inline:auto">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">The things owners ask.</h2>
+      </div>
+      <div class="faq">
+        <details>
+          <summary>Do I have to give you my Google password?</summary>
+          <p>No. You invite me as a Manager on your Google Business Profile by email. You can remove me at any time, and I never see your login.</p>
+        </details>
+        <details>
+          <summary>How fast is it?</summary>
+          <p>72 hours from the moment I have access and your approval. The approval step is usually the slow part, so reply quickly if you want it done that week.</p>
+        </details>
+        <details>
+          <summary>What if I don't like a reply?</summary>
+          <p>You approve every word before anything is posted. Edit anything you like, or ask for a rewrite. One round of edits is included in the sprint.</p>
+        </details>
+        <details>
+          <summary>Do you write fake reviews?</summary>
+          <p>No, never. Fake and incentivised reviews breach Google's policies and UK consumer protection law — and they get profiles suspended. I only reply to real reviews, and I never filter out unhappy customers.</p>
+        </details>
+        <details>
+          <summary>Can you guarantee more calls or a higher rating?</summary>
+          <p>No. Anyone who guarantees Google rankings or review scores is lying to you. I guarantee the work, the deadline and that every reply is honest. The rest depends on your business.</p>
+        </details>
+        <details>
+          <summary>Where are you based?</summary>
+          <p>I'm in Pakistan and I work remotely with UK trade businesses. Everything is handled by email, and you approve every word before it goes live. If remote is a dealbreaker, that's fair — no hard feelings.</p>
+        </details>
+        <details>
+          <summary>What happens after the sprint?</summary>
+          <p>Nothing unless you want it to. If it was useful, the retainer is £99/month for up to 10 replies and 4 posts. If not, you keep the review kit and the report and we part on good terms.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="cta-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="sample" style="text-align:center">
+        <p class="eyebrow" style="justify-content:center">Start with the free sample</p>
+        <h2 id="cta-title" style="max-width:16ch;margin-inline:auto">See three replies to your actual reviews. Then decide.</h2>
+        <p style="color:rgba(241,236,224,.75);max-width:52ch;margin:18px auto 0;font-size:16px">No payment, no call, no obligation. Send your Google profile link and I'll reply with three drafts within one working day.</p>
+        <div class="cta-row" style="justify-content:center;margin-top:30px">
+          <a class="btn btn-lime" href="mailto:aumair525@gmail.com?subject=Three%20sample%20replies&amp;body=Hi%20Umair%2C%0D%0A%0D%0AHere%20is%20my%20Google%20profile%3A%20%0D%0A%0D%0ACan%20you%20send%20three%20sample%20replies%3F%0D%0A%0D%0AThanks">Email me my free samples
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <p style="margin-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:rgba(241,236,224,.45)">aumair525@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="https://umzahid.github.io/relaycalls/" style="margin-bottom:10px">
+          <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="12" fill="#38372A"/><rect x="8" y="26" width="28" height="7" rx="3.5" fill="#D6EC63" opacity=".5"/><rect x="8" y="17" width="20" height="7" rx="3.5" fill="#D6EC63" opacity=".78"/><rect x="8" y="8" width="12" height="7" rx="3.5" fill="#D6EC63"/></svg>
+          <span>Relay</span>
+        </a>
+        <p>Google review replies and profile posts for UK trade businesses.<br>Operated by Umair Zahid · Pakistan</p>
+      </div>
+      <div class="foot-right">
+        <p><a href="mailto:aumair525@gmail.com">aumair525@gmail.com</a><br><a href="https://umzahid.github.io/relaycalls/privacy.html">Privacy notice</a><br><a href="https://umzahid.github.io/relaycalls/">Relay receptionist</a></p>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Relay. Not affiliated with Google.</span>
+      <span>No fake reviews. No incentives. No ranking guarantees.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
