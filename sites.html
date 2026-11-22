@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay Sites — fast one-page websites for UK trades</title>
+<meta name="description" content="We rebuild trade websites as one fast page: tap-to-call, services, reviews and a booking link. £249. Live in 72 hours.">
+<meta name="theme-color" content="#F1ECE0">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Relay Sites — fast one-page websites for UK trades">
+<meta property="og:description" content="One fast page. Tap-to-call, services, reviews, booking. £249. Live in 72 hours.">
+<!--
+  Deploy: copy to relay-pages/sites.html, then:
+    cd relay-pages
+    git add sites.html
+    git commit -m "Add Relay Sites landing page"
+    git push
+-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='12' fill='%2338372A'/%3E%3Crect x='8' y='26' width='28' height='7' rx='3.5' fill='%23D6EC63' opacity='.5'/%3E%3Crect x='8' y='17' width='20' height='7' rx='3.5' fill='%23D6EC63' opacity='.78'/%3E%3Crect x='8' y='8' width='12' height='7' rx='3.5' fill='%23D6EC63'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bone:#F1ECE0;--bone-2:#EAE3D3;--paper:#FBF8F0;--ink:#38372A;
+  --ink-soft:#5C5A46;--ink-mute:#78765F;--olive:#7A853B;--lime:#D6EC63;
+  --coral:#F6631F;--line:rgba(56,55,42,.13);--line-soft:rgba(56,55,42,.08);
+  --sans:"Inter","Segoe UI Variable Text","Segoe UI",system-ui,-apple-system,sans-serif;
+  --display:"Inter Tight","Inter","Segoe UI Variable Display","Segoe UI",system-ui,sans-serif;
+  --mono:ui-monospace,"Cascadia Code","SF Mono",Consolas,monospace;
+  --r:28px;--wrap:1120px;--shadow:0 40px 90px -50px rgba(56,50,30,.55);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:96px;overflow-x:clip}
+body{margin:0;background:var(--bone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--lime);color:var(--ink)}
+.wrap{width:min(var(--wrap),100% - 40px);margin-inline:auto}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--bone);padding:12px 18px;border-radius:0 0 12px 0;z-index:200}
+.skip:focus{left:0}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.04em;line-height:1.02;text-wrap:balance}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:10.5px;letter-spacing:.17em;text-transform:uppercase;color:var(--olive);margin-bottom:22px}
+.eyebrow::before{content:"";width:22px;height:1px;background:currentColor;opacity:.6}
+.lede{color:var(--ink-soft);font-size:18px;line-height:1.62;max-width:52ch}
+.fine{font-size:12.5px;color:var(--ink-mute);margin-top:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 22px;border-radius:999px;border:1px solid transparent;font-size:14.5px;font-weight:600;letter-spacing:-.01em;cursor:pointer;transition:transform .2s,background .2s,border-color .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px)}
+.btn-lime{background:var(--lime);color:#2A2A1C;box-shadow:0 14px 30px -16px rgba(140,160,40,.9)}
+.btn-lime:hover{background:#E4F584}
+.btn-ink{background:var(--ink);color:var(--bone)}
+.btn-ink:hover{background:#2A2921}
+.btn-outline{border-color:rgba(56,55,42,.22);background:transparent}
+.btn-outline:hover{background:rgba(56,55,42,.05);border-color:rgba(56,55,42,.4)}
+:where(a,button):focus-visible{outline:2px solid var(--olive);outline-offset:3px;border-radius:12px}
+
+/* nav */
+.nav-shell{position:sticky;top:0;z-index:80;padding:14px 0 0}
+.nav{display:flex;align-items:center;gap:20px;height:64px;padding:0 12px 0 14px;border-radius:18px;border:1px solid rgba(255,255,255,.6);background:rgba(251,248,240,.72);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 14px 40px -32px rgba(56,50,30,.8)}
+.brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:18px;letter-spacing:-.045em}
+.brand svg{width:27px;height:27px;flex:0 0 auto}
+.tag{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--olive);border:1px solid rgba(122,133,59,.35);border-radius:999px;padding:3px 8px;margin-left:2px}
+.nav-links{display:flex;align-items:center;gap:24px;margin-left:18px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink-soft);padding:4px 0;border-bottom:1.5px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover{color:var(--ink);border-color:var(--olive)}
+.nav-actions{margin-left:auto;display:flex;gap:8px}
+.nav-actions .btn{padding:10px 16px;font-size:13px}
+
+/* hero */
+.hero{position:relative;overflow:clip;isolation:isolate;padding:150px 0 88px;margin-top:-78px}
+.hero .field{position:absolute;inset:0;z-index:-1;background:
+  radial-gradient(55% 70% at 10% 4%,rgba(231,242,168,.95) 0%,rgba(231,242,168,0) 62%),
+  radial-gradient(48% 58% at 96% 8%,rgba(248,214,182,.9) 0%,rgba(248,214,182,0) 64%),
+  radial-gradient(45% 55% at 62% 100%,rgba(220,232,244,.95) 0%,rgba(220,232,244,0) 70%),
+  var(--bone)}
+.hero .field::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(241,236,224,0) 55%,var(--bone) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(38px,5.2vw,62px);letter-spacing:-.05em;line-height:.98}
+.hero .lede{margin-top:22px}
+.hero .lede strong{color:var(--ink);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero-visual{position:relative;padding:10px 6px}
+
+/* phone mockup */
+.phone{width:min(320px,100%);margin-inline:auto;background:#1E211C;border-radius:38px;padding:10px;box-shadow:var(--shadow);transform:rotate(-1.4deg);position:relative}
+.phone-inner{background:var(--paper);border-radius:30px;overflow:hidden;padding:14px 14px 16px}
+.phone-top{display:flex;justify-content:space-between;font-family:var(--mono);font-size:8.5px;color:var(--ink-mute);padding:2px 6px 6px}
+.site-head{display:flex;align-items:center;gap:8px;margin-top:4px}
+.site-logo{width:26px;height:26px;border-radius:8px;background:var(--ink);color:var(--lime);display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:10px}
+.site-head strong{font-size:11.5px;letter-spacing:-.02em}
+.phone h3{font-size:19px;letter-spacing:-.035em;line-height:1.08;margin:14px 0 12px}
+.call-btn{display:block;text-align:center;background:var(--lime);color:#2A2A1C;border-radius:10px;padding:10px;font-size:11.5px;font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+.chips span{font-size:8px;color:var(--ink-soft);border:1px solid var(--line);border-radius:999px;padding:3px 6px}
+.mini-review{margin-top:12px;padding:9px 10px;border-radius:10px;background:var(--bone);font-size:9px;color:var(--ink-soft);line-height:1.45}
+.mini-review b{color:#C58B12;letter-spacing:1px;font-size:8px;display:block;margin-bottom:2px}
+.phone-note{margin-top:9px;font-family:var(--mono);font-size:7px;color:var(--ink-mute);text-align:center}
+.badge{position:absolute;background:var(--ink);color:var(--bone);border-radius:999px;padding:9px 15px;font-size:11.5px;font-weight:600;box-shadow:0 18px 30px -18px rgba(0,0,0,.6)}
+.badge-a{top:-14px;right:10px;transform:rotate(2deg)}
+.badge-b{bottom:-12px;left:-4px;background:var(--lime);color:#2A2A1C;transform:rotate(-2deg)}
+.hero-note{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:46px;padding-top:22px;border-top:1px solid var(--line-soft)}
+.hero-note span{font-size:12.5px;color:var(--ink-mute);display:inline-flex;align-items:center;gap:7px}
+.hero-note svg{width:14px;height:14px;color:var(--olive)}
+
+/* sections */
+section{padding:84px 0}
+.section-head{max-width:720px;margin-bottom:42px}
+.section-head h2{font-size:clamp(30px,4vw,46px)}
+.section-head p{margin-top:16px;color:var(--ink-soft);max-width:58ch}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.card .num{font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--olive);text-transform:uppercase}
+.card h3{font-size:20px;margin:26px 0 9px;letter-spacing:-.03em}
+.card p{font-size:14.5px;color:var(--ink-soft);line-height:1.6}
+.get{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.get-item{display:flex;gap:18px;background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:22px}
+.get-icon{flex:0 0 auto;width:42px;height:42px;border-radius:13px;background:var(--bone-2);display:grid;place-items:center;color:var(--olive)}
+.get-icon svg{width:19px;height:19px}
+.get-item h3{font-size:16.5px;letter-spacing:-.025em;margin:1px 0 5px}
+.get-item p{font-size:13.8px;color:var(--ink-soft);line-height:1.55}
+
+/* steps */
+.steps-dark{background:var(--ink);color:var(--bone);border-radius:36px;padding:clamp(26px,4vw,54px);position:relative;overflow:clip}
+.steps-dark::before{content:"";position:absolute;width:520px;height:520px;right:-180px;top:-220px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,236,99,.22),transparent);pointer-events:none}
+.steps-dark .eyebrow{color:var(--lime)}
+.steps-dark h2{color:var(--bone);font-size:clamp(28px,3.6vw,42px)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:38px;position:relative}
+.step{background:rgba(251,248,240,.055);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:22px}
+.step .n{font-family:var(--mono);font-size:10px;color:var(--lime);letter-spacing:.14em}
+.step h3{font-size:16px;color:var(--bone);margin:18px 0 5px;letter-spacing:-.02em}
+.step p{font-size:12.5px;color:rgba(241,236,224,.62);line-height:1.5}
+
+/* price */
+.price-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;align-items:stretch}
+.price-card{background:var(--paper);border:1px solid var(--line);border-radius:34px;padding:clamp(28px,3.6vw,44px);box-shadow:var(--shadow);position:relative;overflow:clip}
+.price-card::before{content:"";position:absolute;right:-120px;top:-120px;width:300px;height:300px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,236,99,.5),transparent)}
+.price{font-family:var(--display);font-size:clamp(52px,7vw,76px);font-weight:600;letter-spacing:-.06em;line-height:1;margin-top:18px}
+.price small{font-size:15px;font-weight:500;letter-spacing:-.01em;color:var(--ink-mute);margin-left:8px}
+.price-sub{margin-top:8px;font-size:13px;color:var(--ink-mute)}
+.price-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:11px}
+.price-list li{display:flex;gap:10px;font-size:14.5px;color:var(--ink-soft);line-height:1.45}
+.price-list svg{flex:0 0 auto;width:16px;height:16px;margin-top:3px;color:var(--olive)}
+.price-cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+.terms{background:var(--bone-2);border:1px solid var(--line-soft);border-radius:34px;padding:clamp(26px,3.4vw,40px)}
+.terms h3{font-size:21px;margin-bottom:22px}
+.term{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line-soft)}
+.term:last-of-type{border-bottom:0;padding-bottom:0}
+.term h4{margin:2px 0 3px;font-size:14.5px;font-weight:600;letter-spacing:-.01em}
+.term p{font-size:13.3px;color:var(--ink-soft);line-height:1.5}
+.guarantee{margin-top:26px;padding:16px 18px;border-radius:16px;background:rgba(214,236,99,.35);border:1px solid rgba(122,133,59,.25);font-size:13px;line-height:1.55;color:#43452F}
+
+/* faq */
+.faq{max-width:820px;margin-inline:auto}
+.faq details{border-bottom:1px solid var(--line);padding:22px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.025em}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);font-size:20px;color:var(--olive);line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:12px;font-size:14.5px;color:var(--ink-soft);line-height:1.65;max-width:66ch}
+
+/* footer */
+footer{padding:56px 0 40px;border-top:1px solid var(--line)}
+.foot{display:flex;flex-wrap:wrap;gap:26px;align-items:flex-start;justify-content:space-between}
+.foot p{font-size:12.5px;color:var(--ink-mute);line-height:1.7}
+.foot a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(56,55,42,.25)}
+.foot a:hover{text-decoration-color:var(--olive)}
+.foot-right{text-align:right}
+.foot-legal{margin-top:34px;padding-top:20px;border-top:1px solid var(--line-soft);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+.foot-legal span{font-size:11.5px;color:var(--ink-mute)}
+
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero{padding-top:140px}
+  .phone{transform:none}
+  .price-grid{grid-template-columns:1fr}
+  .grid-3{grid-template-columns:1fr}
+  .steps-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  .nav-links{display:none}
+  .nav{height:60px}
+  .nav-actions .btn{padding:9px 13px;font-size:12px}
+  .tag{display:none}
+  .get{grid-template-columns:1fr}
+  section{padding:64px 0}
+  .hero{padding-top:126px}
+  .foot-right{text-align:left}
+}
+@media (max-width:520px){
+  .hero-note{gap:8px 16px}
+  .cta-row .btn{width:100%}
+  .steps-grid{grid-template-columns:1fr}
+  .badge{font-size:10.5px;padding:8px 12px}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav-shell">
+  <nav class="nav wrap" aria-label="Main">
+    <a class="brand" href="https://umzahid.github.io/relaycalls/">
+      <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="12" fill="#38372A"/><rect x="8" y="26" width="28" height="7" rx="3.5" fill="#D6EC63" opacity=".5"/><rect x="8" y="17" width="20" height="7" rx="3.5" fill="#D6EC63" opacity=".78"/><rect x="8" y="8" width="12" height="7" rx="3.5" fill="#D6EC63"/></svg>
+      <span>Relay</span>
+      <span class="tag">Sites</span>
+    </a>
+    <div class="nav-links">
+      <a href="#what">What you get</a>
+      <a href="#how">How it works</a>
+      <a href="#price">Price</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-actions">
+      <a class="btn btn-lime" href="mailto:relaycalls.uk@gmail.com?subject=Free%20homepage%20mockup&amp;body=Hi%20Relay%20Sites%2C%0D%0A%0D%0AHere%20is%20my%20site%3A%20%0D%0A%0D%0ACan%20you%20send%20a%20free%20mockup%3F%0D%0A%0D%0AThanks">Free mockup</a>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="field" aria-hidden="true"></div>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">For UK plumbers, electricians and roofers</p>
+        <h1 id="hero-title">Your website is losing calls before they reach you.</h1>
+        <p class="lede">We rebuild trade websites as one fast page: tap-to-call, your services, your reviews and a booking link. <strong>£249.</strong> Live in 72 hours.</p>
+        <div class="cta-row">
+          <a class="btn btn-ink" href="mailto:relaycalls.uk@gmail.com?subject=Free%20homepage%20mockup&amp;body=Hi%20Relay%20Sites%2C%0D%0A%0D%0AHere%20is%20my%20site%3A%20%0D%0A%0D%0ACan%20you%20send%20a%20free%20mockup%3F%0D%0A%0D%0AThanks">Get a free homepage mockup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-outline" href="#price">See the price</a>
+        </div>
+        <p class="fine">No fake reviews. No ranking promises. You approve every word.</p>
+        <div class="hero-note">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One page, done properly</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>72-hour turnaround</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4Z"/></svg>You own the files</span>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="phone">
+          <div class="phone-inner">
+            <div class="phone-top"><span>9:41</span><span>5G</span></div>
+            <div class="site-head"><span class="site-logo">HP</span><strong>Harbour Plumbing</strong></div>
+            <h3>Boiler broken? We can be there today.</h3>
+            <a class="call-btn" href="#">Call 0161 000 0000</a>
+            <div class="chips"><span>Boiler repair</span><span>Bathrooms</span><span>Leaks</span></div>
+            <div class="mini-review"><b>★★★★★</b>"Fixed the same day. Turned up when he said he would."</div>
+            <p class="phone-note">Example layout — not a real business.</p>
+          </div>
+        </div>
+        <span class="badge badge-a">£249 · 72 hours</span>
+        <span class="badge badge-b">Free mockup first</span>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="cost-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The leak</p>
+        <h2 id="cost-title">Three things cost you the job.</h2>
+        <p>A customer decides in seconds. If the site is slow, hard to tap or has no next step, they go back to Google and pick the next name.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <span class="num">01</span>
+          <h3>It takes too long.</h3>
+          <p>A 7-second load on a phone is a customer gone. Most trade sites are image-heavy and slow on mobile data.</p>
+        </article>
+        <article class="card">
+          <span class="num">02</span>
+          <h3>There is no tap-to-call.</h3>
+          <p>On a phone, your number should be a button. Not text to copy, not a contact page three clicks away.</p>
+        </article>
+        <article class="card">
+          <span class="num">03</span>
+          <h3>There is no next step.</h3>
+          <p>No booking, no form, no WhatsApp. The customer has to work out how to hire you. Most don't bother.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="what" aria-labelledby="what-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">The rebuild</p>
+        <h2 id="what-title">One page. Everything a caller needs.</h2>
+        <p>No menu maze. No stock photos of strangers. One page that does the job a trade website is actually for.</p>
+      </div>
+      <div class="get">
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></span>
+          <div><h3>Fast on a phone</h3><p>One lightweight page. No page builder bloat, no 8MB hero image.</p></div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+          <div><h3>Tap-to-call and WhatsApp</h3><p>The two buttons that matter, at the top and bottom of the page.</p></div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-11a7 7 0 0 1 14 0c0 6.5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><h3>Services and areas</h3><p>What you do and where you cover it, written for a real customer.</p></div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1L3.2 9.4l6.1-.9L12 3Z"/></svg></span>
+          <div><h3>Your best reviews</h3><p>Real reviews only. They do the selling while you are under a sink.</p></div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M8 2v4M16 2v4M3 10h18"/></svg></span>
+          <div><h3>Booking or enquiry</h3><p>A link to your booking tool, or a short form. One clear next step.</p></div>
+        </div>
+        <div class="get-item">
+          <span class="get-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.7 3.8 9S14.5 18.5 12 21c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/></svg></span>
+          <div><h3>Hosting and basic SEO</h3><p>Free hosting, your domain connected, title and meta set up.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="how-title">
+    <div class="wrap">
+      <div class="steps-dark">
+        <p class="eyebrow">The 72 hours</p>
+        <h2 id="how-title">You send the details. We do the rest.</h2>
+        <div class="steps-grid">
+          <div class="step"><span class="n">01</span><h3>Ten minutes</h3><p>Services, areas, phone, reviews, photos and your domain.</p></div>
+          <div class="step"><span class="n">02</span><h3>We build</h3><p>One page, mobile-first. Copy written and edited for your trade.</p></div>
+          <div class="step"><span class="n">03</span><h3>You approve</h3><p>Staging link. One round of edits. Nothing goes live until you say so.</p></div>
+          <div class="step"><span class="n">04</span><h3>Live</h3><p>Deployed, domain connected, files handed to you.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="price" aria-labelledby="price-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Price</p>
+        <h2 id="price-title">£249. One page. Live in 72 hours.</h2>
+        <p>One fixed scope, one fixed price. No monthly fee unless you want the care plan.</p>
+      </div>
+      <div class="price-grid">
+        <div class="price-card">
+          <p class="eyebrow">Relay Sites rebuild</p>
+          <p class="price">£249<small>one-off</small></p>
+          <p class="price-sub">Free mockup first · no obligation</p>
+          <ul class="price-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One-page mobile-first site</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Tap-to-call and WhatsApp</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Services, areas and real reviews</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Booking or enquiry link</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Free hosting and basic SEO</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One round of edits</li>
+          </ul>
+          <div class="price-cta">
+            <a class="btn btn-ink" href="mailto:relaycalls.uk@gmail.com?subject=The%20%C2%A3249%20site&amp;body=Hi%20Relay%20Sites%2C%0D%0A%0D%0AI%27d%20like%20the%20%C2%A3249%20one-page%20site.%20Here%20is%20my%20current%20site%3A%20%0D%0A%0D%0AThanks">Start the rebuild
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn-outline" href="mailto:relaycalls.uk@gmail.com?subject=Free%20homepage%20mockup">Free mockup first</a>
+          </div>
+          <p class="fine">Full refund if it is not live within 72 hours of content and approval.</p>
+        </div>
+
+        <div class="terms">
+          <h3>What happens after you say yes</h3>
+          <div class="term"><div><h4>You send the details</h4><p>Services, areas, phone, reviews, photos, domain. Ten minutes.</p></div></div>
+          <div class="term"><div><h4>We build the page</h4><p>Copy, layout and mobile checks. You get a staging link, not a login to a tool.</p></div></div>
+          <div class="term"><div><h4>You approve or edit</h4><p>One round of edits is included. Nothing goes live until you confirm.</p></div></div>
+          <div class="term"><div><h4>We launch and hand over</h4><p>Domain connected, files sent, invoice paid. Optional care plan £29/month.</p></div></div>
+          <p class="guarantee"><strong>The guarantee:</strong> live in 72 hours or a full refund. We do not guarantee rankings, traffic or calls — nobody honest can.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" aria-labelledby="faq-title">
+    <div class="wrap">
+      <div class="section-head" style="max-width:820px;margin-inline:auto">
+        <p class="eyebrow">Questions</p>
+        <h2 id="faq-title">The things owners ask.</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Do I need a domain?</summary><p>No. We can launch on a free subdomain and connect your domain later. If you already have one, we point it at the new site — you keep ownership.</p></details>
+        <details><summary>Can you use my logo and photos?</summary><p>Yes. Send what you have. If the photos are poor, we use clean stock images and tell you which shots would improve the page.</p></details>
+        <details><summary>How many pages is it?</summary><p>One page with sections: hero, services, areas, reviews, contact. That is deliberate — it is faster and converts better on a phone.</p></details>
+        <details><summary>Do you write the copy?</summary><p>Yes. We write it from your services and reviews, then you approve every word. No invented claims.</p></details>
+        <details><summary>Do you use AI?</summary><p>Yes — AI-assisted copy and layout, then edited by a human. You approve before anything goes live.</p></details>
+        <details><summary>Can you guarantee more calls?</summary><p>No. We guarantee the site, the speed and the deadline. Calls depend on your area, your prices and your work.</p></details>
+        <details><summary>Who owns the site?</summary><p>You do. We hand over the files and the domain access at launch.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="cta-title" style="padding-top:0">
+    <div class="wrap">
+      <div class="steps-dark" style="text-align:center">
+        <p class="eyebrow" style="justify-content:center">Start with the mockup</p>
+        <h2 id="cta-title" style="max-width:18ch;margin-inline:auto">See your homepage rebuilt before you pay.</h2>
+        <p style="color:rgba(241,236,224,.75);max-width:52ch;margin:18px auto 0;font-size:16px">Send your current site. We will send a free mockup of the new homepage within one working day. No payment, no call, no obligation.</p>
+        <div class="cta-row" style="justify-content:center;margin-top:30px">
+          <a class="btn btn-lime" href="mailto:relaycalls.uk@gmail.com?subject=Free%20homepage%20mockup&amp;body=Hi%20Relay%20Sites%2C%0D%0A%0D%0AHere%20is%20my%20site%3A%20%0D%0A%0D%0ACan%20you%20send%20a%20free%20mockup%3F%0D%0A%0D%0AThanks">Email for the free mockup
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <p style="margin-top:18px;font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:rgba(241,236,224,.45)">relaycalls.uk@gmail.com</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="https://umzahid.github.io/relaycalls/" style="margin-bottom:10px">
+          <svg viewBox="0 0 44 44" aria-hidden="true"><rect width="44" height="44" rx="12" fill="#38372A"/><rect x="8" y="26" width="28" height="7" rx="3.5" fill="#D6EC63" opacity=".5"/><rect x="8" y="17" width="20" height="7" rx="3.5" fill="#D6EC63" opacity=".78"/><rect x="8" y="8" width="12" height="7" rx="3.5" fill="#D6EC63"/></svg>
+          <span>Relay</span>
+        </a>
+        <p>Fast one-page websites for UK trade businesses.<br>Relay Sites · Remote service for UK trades</p>
+      </div>
+      <div class="foot-right">
+        <p><a href="mailto:relaycalls.uk@gmail.com">relaycalls.uk@gmail.com</a><br><a href="https://umzahid.github.io/relaycalls/privacy.html">Privacy notice</a><br><a href="https://umzahid.github.io/relaycalls/reviews.html">Relay Reviews</a></p>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 Relay Sites. Not affiliated with Google.</span>
+      <span>No fake reviews. No ranking guarantees.</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
